@@ -1,7 +1,7 @@
 
 #' TDWG Darwin Core Column Name Check 
 #' 
-#' @description DCcheck checks to see if column names in your dataframe match the standardized Darwin Core names established by the Taxonomic Databases WorkingGroup
+#' @description DCcheck checks to see if the column names in your dataframe match the standardized Darwin Core names established by the Taxonomic Databases WorkingGroup
 #' 
 #' @details more details on how DC check works/what it does A dataframe is created with all the standard DarwinCore names. The function runs through each of the column names in your working dataframe to see if they match either 1. A standard DarwinCore name 2. A name with a "custom_" indicating a custom made column or 3. A name with a "_DQ" indicating a data quality flag. The function then counts all of the names fitting within each category and creates a summary table.
 #'
