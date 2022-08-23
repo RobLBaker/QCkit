@@ -7,7 +7,7 @@
 #'
 #' @param workingdf - This is the dataframe you want to run against the function. To call, simply write workingdf = "the name of your dataframe". 
 #'
-#' @return - The function returns a list of the column names you should fix (not fitting with simple Darwin Core terms, custom name formatting, data quality flagging formatting). Additionally, a small summary table is printed with the counts of the columns falling under each category (DarwinCore, Custom, DQ, FixMe). 
+#' @return - The function returns a list of the column names you should fix (not fitting with simple Darwin Core terms, custom name formatting, data quality flagging formatting). Additionally, a small summary table is printed with the counts of the columns falling under each category (DarwinCore, Custom, DQ, Fix Me). 
 #' 
 #' @export 
 #'
