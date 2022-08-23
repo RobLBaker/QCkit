@@ -1,17 +1,17 @@
 
-#' TDWG Darwin Core Column Name Check 
+#' TDWG Darwin Core Column Name Check 08-23-2022
 #' 
-#' @description DCcheck checks to see if the column names in your dataframe match the standardized Darwin Core names established by the Taxonomic Databases WorkingGroup
+#' @description DCcheck checks to see if the column names in your dataframe match the standardized simple Darwin Core names established by the Taxonomic Databases Working Group
 #' 
-#' @details more details on how DC check works/what it does A dataframe is created with all the standard DarwinCore names. The function runs through each of the column names in your working dataframe to see if they match either 1. A standard DarwinCore name 2. A name with a "custom_" indicating a custom made column or 3. A name with a "_DQ" indicating a data quality flag. The function then counts all of the names fitting within each category and creates a summary table.
+#' @details A dataframe is created with all the simple DarwinCore terms, drawn from Darwin Core reference guide: https://dwc.tdwg.org/terms/ last updated 07-15-2021. We have chosen to align ourselves mostly with the simple Darwin Core rules: https://dwc.tdwg.org/simple/. The function runs through each of the column names in your working dataframe to see if they match 1. A standard simple DarwinCore name 2. A name with a pattern of strings matching "custom_", indicating a custom made column  or 3. A name with a pattern of strings matching "_DQ", indicating a data quality flag. If the column name does not fit within any of the three categories, a "Fix me" statement is printed alongside the column name. The function then counts all of the names fitting within each category and prints a summary table.
 #'
-#' @param workingdf - This is dataframe you want to run against the function. To call, simply write workingdf = "the name of your dataframe". 
+#' @param workingdf - This is the dataframe you want to run against the function. To call, simply write workingdf = "the name of your dataframe". 
 #'
-#' @return - what will the function return? A dataframe, string, or something else? The function returns a list of the column names you should fix (because they do not match any of the rules we have established). In addition, a small summary table is printed with the counts of the columns falling under each category (DarwinCore, Custom, DQ, FixMe)
+#' @return - The function returns a list of the column names you should fix (not fitting with simple Darwin Core terms, custom name formatting, data quality flagging formatting). Additionally, a small summary table is printed with the counts of the columns falling under each category (DarwinCore, Custom, DQ, FixMe). 
 #' 
 #' @export 
 #'
-#' @examples # "DCcheck(df)"
+#' @examples # "DCcheck(yourdataframe)"
 #' 
 
 
