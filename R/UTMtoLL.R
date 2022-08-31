@@ -4,8 +4,6 @@
 #' 
 #' @details Define the name of your dataframe, the easting and northing columns within it, the UTM zone within which those coordinates are located, and the reference coordinate system (datum). UTM Northing and Easting columns must be in separate columns prior to running the function. 
 #' 
-#' The function installs the necessary packages to run the function: tidyverse, dplyr, plyr, and terra. 
-#' 
 #' If a datum is not defined, the function will default to "WGS84".
 #' 
 #' If there are missing coordinates in your dataframe they will be preserved, however they will be moved to the end of your dataframe. 
@@ -22,20 +20,7 @@
 #' @examples UTMtoLL(Data = mydataframe, EastingCol = "EastingCoords", NorthingCol = "NorthingCoords", Zone = "17", Datum = "WGS84")
 
 UTMtoLL <- function(Data, EastingCol, NorthingCol, Zone, Datum = "WGS84"){
-  
-  packages <- c("tidyverse", "dplyr", "terra", "plyr")
-  
-  package.check <- lapply(
-    packages,
-    FUN = function(x) {
-      if (!require(x, character.only = TRUE)) {
-        install.packages(x, dependencies = TRUE)
-        library(x, character.only = TRUE)
-      }
-    }
-  )
-  
-  
+
   Base <- as.data.frame(Data)
   Base <- dplyr::rename(Base, "b" = EastingCol,  "a" = NorthingCol)
   
@@ -43,7 +28,7 @@ UTMtoLL <- function(Data, EastingCol, NorthingCol, Zone, Datum = "WGS84"){
   
   Mid2 <- Base[is.na(Base$"b" & Base$"a"), ]
   
-  Final <- select(Mid, "b", "a")
+  Final <- dplyr::select(Mid, "b", "a")
   
   Final[1:2] <- lapply(Final[1:2], FUN = function(z){as.numeric(z)})
   
@@ -52,17 +37,17 @@ UTMtoLL <- function(Data, EastingCol, NorthingCol, Zone, Datum = "WGS84"){
   
   
   
-  v <- vect(Final, crs=paste0("+proj=utm +zone=", Zone, " +datum=", Datum, " +units=m"))
+  v <- terra::vect(Final, crs=paste0("+proj=utm +zone=", Zone, " +datum=", Datum, " +units=m"))
   v
   
-  converted <- project(v, "+proj=longlat +datum=WGS84")
+  converted <- terra::project(v, "+proj=longlat +datum=WGS84")
   converted
   
-  lonlat <- geom(converted)[, c("x", "y")]
+  lonlat <- terra::geom(converted)[, c("x", "y")]
   
   
   Data <-  cbind(Mid, lonlat)
-  Data <- rbind.fill(Data, Mid2)
+  Data <- plyr::rbind.fill(Data, Mid2)
   Data <- dplyr::rename(Data, EastingCol = "b", NorthingCol = "a", "decimalLongitude" = x , "decimalLatitude" = y) 
   return(Data)
 } 

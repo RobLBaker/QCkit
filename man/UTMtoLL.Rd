@@ -26,8 +26,6 @@ UTMtoLL takes your dataframe with UTM coordinates in separate Easting and Northi
 \details{
 Define the name of your dataframe, the easting and northing columns within it, the UTM zone within which those coordinates are located, and the reference coordinate system (datum). UTM Northing and Easting columns must be in separate columns prior to running the function. 
 
-The function installs the necessary packages to run the function: tidyverse, dplyr, plyr, and terra. 
-
 If a datum is not defined, the function will default to "WGS84".
 
 If there are missing coordinates in your dataframe they will be preserved, however they will be moved to the end of your dataframe.
