@@ -62,7 +62,8 @@
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>directory</dt>
-<dd><p>String. Path to the file(s) to have blanks replaced with NAs. Defaults to the working directory of the project (here::here())</p></dd>
+<dd><p>String. Path to the file(s) to have blanks replaced with
+NAs. Defaults to the working directory of the project (here::here())</p></dd>
 
 </dl></div>
     <div id="value">
@@ -73,9 +74,15 @@
     </div>
     <div id="details">
     <h2>Details</h2>
-    <p><code>replace_blanks()</code> is particularly useful for exporting data from a database (such as access) and converting it to a data package with metadata.</p>
-<p><code>replace_blanks()</code> will import all .csv files in the current working directory. The files are then written back out to the same directory, overwriting the old .csv files. Any blank cells in the original .csv files will be replaced with NA.</p>
-<p>One exception is if a .csv contains NO data (i.e. just column names and no data in any of the cells). In this case, the blanks will not be replaced with NA (as the function cannot determine how many NAs to include).</p>
+    <p><code>replace_blanks()</code> is particularly useful for exporting data from a
+database (such as access) and converting it to a data package with metadata.</p>
+<p><code>replace_blanks()</code> will import all .csv files in the current working
+directory. The files are then written back out to the same directory,
+overwriting the old .csv files. Any blank cells in the original .csv files
+will be replaced with NA.</p>
+<p>One exception is if a .csv contains NO data (i.e. just column names and no
+data in any of the cells). In this case, the blanks will not be replaced with
+NA (as the function cannot determine how many NAs to include).</p>
     </div>
 
     <div id="ref-examples">
