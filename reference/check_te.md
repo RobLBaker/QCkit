@@ -1,0 +1,104 @@
+# Threatened Or Endangered Species Checker Function
+
+`check_te()` generates a list of species you should consider removing
+from your dataset before making it public by matching the scientific
+names within your data set to the Federal Conservation List.
+`check_te()` should be considered a helpful tool for identifying
+federally listed endangered and threatened species in your data. Each
+National Park has a park-specific Protected Data Memo that outlines
+which data should be restricted. Threatened and endangered species are
+often - although not always - listed on these Memos. Additional species
+(from state conservation lists) or non-threatened and non-endangered
+species of concern or other biological or non-biological resources may
+be listed on Memos. Consult the relevant park-specific Protected Data
+Memo prior to making decisions on restricting or releasing data.
+
+## Usage
+
+``` r
+check_te(x, species_col, park_code, expansion = FALSE)
+```
+
+## Arguments
+
+- x:
+
+  - The name of your data frame containing species observations
+
+- species_col:
+
+  - The name of the column within your data frame containing the
+    scientific names of the species (genus and specific epithet).
+
+- park_code:
+
+  - A four letter park code. Or a list of park codes.
+
+- expansion:
+
+  - Logical. Defaults to FALSE. The default setting will return only
+    exact matches between your the scientific binomial (genera and
+    specific epithet) in your data set and the federal match list.
+    Setting expansion = TRUE will expand the list of matches to return
+    all species (and subspecies) that from the match list that match any
+    genera listed in your data set, regardless of whether a given
+    species is actually in your data set. An additional column
+    indicating whether the species returned is in your data set ("In
+    your Data") or has been expanded to ("Expansion") is generated.
+
+## Value
+
+The function returns a (modified) data frame with the names of all the
+species that fall under the federal conservation list. The resulting
+data frame may have multiple instances of a given species if it is
+listed in multiple parks (park codes for each listing are supplied).
+Technically it is a huxtable, but it should function identically to a
+data frame for downstream purposes.
+
+## Details
+
+Define your species data set name, column name with the scientific names
+of your species, and your four letter park code.
+
+The `check_te()` function downloads the Federal Conservation list using
+the IRMA odata API service and matches this species list to the list of
+scientific names in your data frame. Keep in mind that this is a Federal
+list, not a state list. Changes in taxa names may also cause some
+species to be missed. Because the odata API service is not publicly
+available, you must be logged in to the NPS VPN or in the office to use
+this function.
+
+For the default, expansion = FALSE, the function will perform an exact
+match between the taxa in your scientificName column and the federal
+Conservation List and then filter the results to keep only species that
+are listed as endangered, threatened, or considered for listing. If your
+scientificName column contains information other than the binomial
+(genus and species), no matches will be returned. For instance, if you
+have an Order or just a genus listed, these will not be matched to the
+Federal Conservation List.
+
+If you set expansion = TRUE, the function will truncate each item in
+your scientificName column to the first word in an attempt to extract a
+genus name. If you only have genera listed, these will be retained. If
+you have have higher-order taxa listed such as Family, Order, or Phyla
+again the first word will be retained. This first word (typically a
+genus) will be matched to just the generic name of species from the
+Federal Conservation List. All matches, regardless of listing status,
+are retained. The result is that for a given species in your
+scientificName column, all species within that genus that are on the
+Federal Conservation List will be returned (along with their federal
+conservation listing codes and a column indicating whether the species
+is actually in your data or is part of the expanded search).
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+#for individual parks:
+check_te(x = my_species_dataframe, species_col = "scientificName", park_code = "BICY")
+list<-check_te(data, "scientificName", "ROMO", expansion=TRUE)
+# for a list of parks:
+park_code<-c("ROMO", "YELL", "SAGU")
+list<-check_te(data, "scientificName", park_code, expansion=TRUE)
+} # }
+```

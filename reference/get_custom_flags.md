@@ -1,0 +1,80 @@
+# Creates dataframe(s) summarizing data quality
+
+**\[experimental\]** get_custom_flags returns data frames that that
+summarize data quality control flags (one that summarizes at the data
+file level and one for each column). The summaries include all data with
+quality control flagging (a column name that ends in "\_flag") and
+optionally any additional custom columns the user specifies, either by
+column name or number.
+
+The use can specify which of the 2 data frames (or all as a list of
+dataframes) should be returned.
+
+The number of each flag type for each column (A, AE, R, P) is reported.
+Unflagged columns are assumed to have only accepted (or missing) data.
+The total number of data points in the specified columns (and data
+flagging columns for) each .csv are also reported. NAs considered
+missing data. An Unweighted Relative Response (RRU) is calculated as the
+total number of accepted data points (A, AE, and data that are not
+flagged) divided by the total number of data points (excluding missing
+values) in all specified columns (and the flagged columns).
+
+## Usage
+
+``` r
+get_custom_flags(
+  directory = here::here(),
+  cols = (""),
+  output = c("all", "files", "columns")
+)
+```
+
+## Arguments
+
+- directory:
+
+  is the path to the data package .csv files (defaults to the current
+  working directory).
+
+- cols:
+
+  A comma delimited list of column names. If left unspecified, defaults
+  to just flagged columns.
+
+- output:
+
+  A string indicating what output should be provided. "columns" returns
+  a summary table of QC flags and RRU values in each specified column
+  for every data file. "files" returns a summary table of total QC flags
+  and mean across each data file. "all" will return all three data
+  frames in a single list.
+
+## Value
+
+a dataframe with quality control summary information summarized at the
+specified level(s).
+
+## Details
+
+Flagged columns must have names ending in "\_flag". Missing values must
+be specified as NA. The function counts cells within "\*\_flag" columns
+that start with one of the flagging characters (A, AE, R, P) and ignores
+trailing characters and white spaces. For custom columns that do not
+include a specific flagging column, all non-missing (non-NA) values are
+considered Accepted (A).
+
+The intent of get_custom_flags is for integration into reports on data
+quality, such as Data Release Reports (DRRs).
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+
+get_custom_flags("~/my_data_package_directory", cols = c("scientificName",
+                                                         "locality"),
+                                                         output="all")
+cols <- colnames(read.csv("mydata.csv"))[c(1:4, 7, 10)]
+get_custom_flags(cols = cols, output="files")
+} # }
+```

@@ -1,0 +1,38 @@
+# QCkit
+
+QCkit is a collection of quality control functions to munge, check,
+flag, correct, and summarize data collected by the U.S. National Park
+Service Inventory & Monitoring Division. These functions will be
+particularly useful in preparing data for metadata creation and in
+writing Data Release Reports, but may include aspects that are more
+widely applicable outside the National Park Service (such as converting
+UTMs to Latitude and Longitude).
+
+Functions are typically user generated and so may not have been
+thoroughly tested for all use cases.
+
+If you would like to contribute useful functions please initiate a pull
+request.
+
+Please request enhancements and bug fixes through
+[Issues](https://github.com/nationalparkservice/QCkit/issues).
+
+# Installation
+
+Stand-alone installation:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("nationalparkservice/QCkit")
+library(QCkit)
+```
+
+QCkit is also part of the
+[NPSdataverse](https://nationalparkservice.github.io/NPSdataverse/) and
+can be installed along with the other components of NPSdataverse:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("nationalparkservice/NPSdataverse")
+library(NPSdataverse)
+```
