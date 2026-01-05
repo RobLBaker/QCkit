@@ -24,14 +24,14 @@
 Source:
 [`DESCRIPTION`](https://github.com/nationalparkservice/QCkit/blob/master/DESCRIPTION)
 
-Baker R, Patterson J, DeVivo J, Quevedo I, Wright S (2025). *QCkit: NPS
+Baker R, Patterson J, DeVivo J, Quevedo I, Wright S (2026). *QCkit: NPS
 Inventory and Monitoring Quality Control Toolkit*. R package version
 1.2.1, <https://github.com/nationalparkservice/QCkit/>.
 
     @Manual{,
       title = {QCkit: NPS Inventory and Monitoring Quality Control Toolkit},
       author = {Robert Baker and Judd Patterson and Joe DeVivo and Issac Quevedo and Sarah Wright},
-      year = {2025},
+      year = {2026},
       note = {R package version 1.2.1},
       url = {https://github.com/nationalparkservice/QCkit/},
     }
