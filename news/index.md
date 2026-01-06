@@ -2,9 +2,14 @@
 
 ## QCkit v1.2.1
 
+### 2025-01-06
+
+- Add ability to set the Origination flag in DataStore via the
+  `create_datastore_script` function. Defaults to TRUE.
+
 ### 2025-01-05
 
-- Fixed bug in create_datastore_script that occurred when the way the
+- Fixed bug in `create_datastore_script` that occurred when the way the
   DataStore API handled access constraints changed between V7 and V8.
   Also improved formatting of screen print and make the DataStore
   reference link clickable.
