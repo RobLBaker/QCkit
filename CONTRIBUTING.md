@@ -185,12 +185,15 @@ You have added a description of any changes made to the changelog in
 NEWS.md 2) If you have added a function, make sure you also include unit
 tests that cover the function. If you have changed a function, make sure
 the unit tests still pass. 3) If you have added or changed a function,
-make sure that the package loads using `devtools::load_all()`. 2) You
-have updated any necessary documentation using `devtools::document()` 3)
-You have updated the associated web pages using
+make sure that the package loads using
+[`devtools::load_all()`](https://devtools.r-lib.org/reference/load_all.html).
+2) You have updated any necessary documentation using
+[`devtools::document()`](https://devtools.r-lib.org/reference/document.html)
+3) You have updated the associated web pages using
 [`pkgdown::build_site_github_pages()`](https://pkgdown.r-lib.org/reference/build_site_github_pages.html)
 4) You have checked that there are no errors or warnings when the
-package is built using `devtools::check()`.
+package is built using
+[`devtools::check()`](https://devtools.r-lib.org/reference/check.html).
 
 ## Styleguides
 

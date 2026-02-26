@@ -2,6 +2,14 @@
 
 ## QCkit v1.2.1
 
+### 2026-02-26
+
+- update `get_elevation` to handle unpredictable API responses for
+  invalid lat/long values.
+- update unit tests to pass using DataStore v8 API
+- update unit tests for `summarize_qc_flags` to reflect changes made in
+  the function
+
 ### 2025-01-09
 
 - `create_datastore_script` now has a new parameter, lib_type. If “R” is
