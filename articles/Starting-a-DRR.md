@@ -6,7 +6,7 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 ## DRRs: Background
 
 [Purpose and Scope of Data Release
-Reports](https://nationalparkservice.github.io/QCkit/articles/DRR_Purpose_and_Scope.md)
+Reports](https://doi-nps.github.io/QCkit/articles/DRR_Purpose_and_Scope.md)
 
 DRRs are created by the National Park Service and provide detailed
 descriptions of valuable research datasets, including the methods used
@@ -40,14 +40,13 @@ of NPS data packages.
     files**. All quality assurance, quality control, and quality
     flagging should be completed. Ideally you have already created or
     are in the process of creating a data package (see the
-    [documentation](https://nationalparkservice.github.io/EMLeditor/articles/a02_EML_creation_script.html)
+    [documentation](https://doi-nps.github.io/EMLeditor/articles/a02_EML_creation_script.html)
     associated with the R package
-    [EMLeditor](https://nationalparkservice.github.io/EMLeditor/index.html)
-    for data package creation). All of the .csv files you want to
-    describe in the DRR should be in a single folder with **no
-    additional .csv files** (other files such as .txt and .xml will be
-    ignored). This folder can be the same folder you used/are using to
-    create a data package.
+    [EMLeditor](https://doi-nps.github.io/EMLeditor/index.html) for data
+    package creation). All of the .csv files you want to describe in the
+    DRR should be in a single folder with **no additional .csv files**
+    (other files such as .txt and .xml will be ignored). This folder can
+    be the same folder you used/are using to create a data package.
 
 2.  **Using Rstudio, open an R project** (Select: File \> New Project…)
     in the same folder as your .csv files. If you already have an R
@@ -56,30 +55,30 @@ of NPS data packages.
 
 3.  **Install, update (if necessary), and load the QCkit R package**.
     QCkit can be installed either as a component of the
-    [NPSdataverse](https://nationalparkservice.github.io/NPSdataverse/)
-    or on its own. The benefits of installing the entire NPSdataverse is
-    that upon loading the NPSdataverse, you will automatically be
-    informed if there are any updates to QCkit (or any of the
-    constituent packages). The downside to installing and loading the
-    NPSdataverse is that the first time you install it the process can
-    be lengthy (there are many dependencies) and you may hit the
-    GitHub.com API rate limit. Either installation is from GitHub.com
-    and requires the devtools package to install.
+    [NPSdataverse](https://doi-nps.github.io/NPSdataverse/) or on its
+    own. The benefits of installing the entire NPSdataverse is that upon
+    loading the NPSdataverse, you will automatically be informed if
+    there are any updates to QCkit (or any of the constituent packages).
+    The downside to installing and loading the NPSdataverse is that the
+    first time you install it the process can be lengthy (there are many
+    dependencies) and you may hit the GitHub.com API rate limit. Either
+    installation is from GitHub.com and requires the devtools package to
+    install.
 
 ``` r
-# Install the devtools package, if you don't already have it:
-install.packages("devtools")
+# Install the remotes package, if you don't already have it:
+install.packages("remotes")
 ```
 
 ``` r
 # Install and load QCkit via NPSdataverse:
-devtools::install_github("nationalparkservice/NPSdataverse")
+remotes::install_github("doi-nps/NPSdataverse")
 library(NPSdataverse)
 ```
 
 ``` r
 # Alternatively, install and load just QCkit:
-devtools::install_github("nationalparkservice/QCkit")
+remotes::install_github("doi-nps/QCkit")
 library(QCkit)
 ```
 
@@ -103,7 +102,7 @@ library(QCkit)
 
 6.  **Edit the DRR Template** to reflect the data you would like to
     descibe and according to the instructions in the [“Using the DRR
-    Template”](https://nationalparkservice.github.io/QCkit/articles/Using-the-DRR-Template.md)
+    Template”](https://doi-nps.github.io/QCkit/articles/Using-the-DRR-Template.md)
     guide.
 
 7.  **“knit” the .rmd file to Word** when you are done editing it.

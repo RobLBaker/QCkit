@@ -15,24 +15,24 @@ If you would like to contribute useful functions please initiate a pull
 request.
 
 Please request enhancements and bug fixes through
-[Issues](https://github.com/nationalparkservice/QCkit/issues).
+[Issues](https://github.com/doi-nps/QCkit/issues).
 
 # Installation
 
 Stand-alone installation:
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("nationalparkservice/QCkit")
+# install.packages("remotes")
+remotes::install_github("doi-nps/QCkit")
 library(QCkit)
 ```
 
 QCkit is also part of the
-[NPSdataverse](https://nationalparkservice.github.io/NPSdataverse/) and
-can be installed along with the other components of NPSdataverse:
+[NPSdataverse](https://doi-nps.github.io/NPSdataverse/) and can be
+installed along with the other components of NPSdataverse:
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("nationalparkservice/NPSdataverse")
+# install.packages("remotes")
+remotes::install_github("doi-nps/NPSdataverse")
 library(NPSdataverse)
 ```

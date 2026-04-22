@@ -3,7 +3,7 @@
 This function can take a list of coordinates and park units as input. In
 addition to being vectorized, depending on the park borders, it can be a
 major improvement on
-[`validate_coord()`](https://nationalparkservice.github.io/QCkit/reference/validate_coord.md).
+[`validate_coord()`](https://doi-nps.github.io/QCkit/reference/validate_coord.md).
 
 ## Usage
 

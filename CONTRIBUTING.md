@@ -31,20 +31,18 @@ involved. The community looks forward to your contributions.
 ## I Have a Question
 
 > If you want to ask a question, we assume that you have read the
-> available
-> [Documentation](https://nationalparkservice.github.io/QCkit/).
+> available [Documentation](https://doi-nps.github.io/QCkit/).
 
 Before you ask a question, it is best to search for existing
-[Issues](https://github.com/nationalparkservice/QCkit/issues) that might
-help you. In case you have found a suitable issue and still need
-clarification, you can write your question in this issue. It is also
-advisable to search the internet for answers first.
+[Issues](https://github.com/doi-nps/QCkit/issues) that might help you.
+In case you have found a suitable issue and still need clarification,
+you can write your question in this issue. It is also advisable to
+search the internet for answers first.
 
 If you then still feel the need to ask a question and need
 clarification, we recommend the following:
 
-- Open an
-  [Issue](https://github.com/nationalparkservice/QCkit/issues/new/choose).
+- Open an [Issue](https://github.com/doi-nps/QCkit/issues/new/choose).
 - Provide as much context as you can about what you’re running into.
 - Provide project and platform versions , depending on what seems
   relevant.
@@ -74,13 +72,13 @@ potential bug as fast as possible.
 - Determine if your bug is really a bug and not an error on your side
   e.g. using incompatible environment components/versions (Make sure
   that you have read the
-  [documentation](https://nationalparkservice.github.io/QCkit/). If you
-  are looking for support, you might want to check [this
+  [documentation](https://doi-npservice.github.io/QCkit/). If you are
+  looking for support, you might want to check [this
   section](#i-have-a-question)).
 - To see if other users have experienced (and potentially already
   solved) the same issue you are having, check if there is not already a
   bug report existing for your bug or error in the [bug
-  tracker](https://github.com/nationalparkservice/QCkit/issues/new/choose).
+  tracker](https://github.com/ndoi-nps/QCkit/issues/new/choose).
 - Also make sure to search the internet to see if users outside of the
   GitHub community have discussed the issue.
 - Collect information about the bug:
@@ -102,8 +100,7 @@ potential bug as fast as possible.
 We use GitHub issues to track bugs and errors. If you run into an issue
 with the project:
 
-- Open an
-  [Issue](https://github.com/nationalparkservice/QCkit/issues/new/choose).
+- Open an [Issue](https://github.com/doi-nps/QCkit/issues/new/choose).
   (Since we can’t be sure at this point whether it is a bug or not, we
   ask you not to talk about a bug yet and not to label the issue.)
 - Explain the behavior you would expect and the actual behavior.
@@ -140,13 +137,12 @@ suggestions.
 #### Before Submitting an Enhancement
 
 - Make sure that you are using the latest version.
-- Read the [documentation](https://nationalparkservice.github.io/QCkit/)
-  carefully and find out if the functionality is already covered, maybe
-  by an individual configuration.
-- Perform a
-  [search](https://github.com/nationalparkservice/QCkit/issues) to see
-  if the enhancement has already been suggested. If it has, add a
-  comment to the existing issue instead of opening a new one.
+- Read the [documentation](https://doi-nps.github.io/QCkit/) carefully
+  and find out if the functionality is already covered, maybe by an
+  individual configuration.
+- Perform a [search](https://github.com/doi-nps/QCkit/issues) to see if
+  the enhancement has already been suggested. If it has, add a comment
+  to the existing issue instead of opening a new one.
 - Find out whether your idea fits with the scope and aims of the
   project. It’s up to you to make a strong case to convince the
   project’s developers of the merits of this feature. Keep in mind that
@@ -159,7 +155,7 @@ suggestions.
 #### How Do I Submit a Good Enhancement Suggestion?
 
 Enhancement suggestions are tracked as [GitHub
-issues](https://github.com/nationalparkservice/QCkit/issues).
+issues](https://github.com/doi-nps/QCkit/issues).
 
 - Use a **clear and descriptive title** for the issue to identify the
   suggestion.
@@ -185,15 +181,12 @@ You have added a description of any changes made to the changelog in
 NEWS.md 2) If you have added a function, make sure you also include unit
 tests that cover the function. If you have changed a function, make sure
 the unit tests still pass. 3) If you have added or changed a function,
-make sure that the package loads using
-[`devtools::load_all()`](https://devtools.r-lib.org/reference/load_all.html).
-2) You have updated any necessary documentation using
-[`devtools::document()`](https://devtools.r-lib.org/reference/document.html)
-3) You have updated the associated web pages using
+make sure that the package loads using `devtools::load_all()`. 2) You
+have updated any necessary documentation using `devtools::document()` 3)
+You have updated the associated web pages using
 [`pkgdown::build_site_github_pages()`](https://pkgdown.r-lib.org/reference/build_site_github_pages.html)
 4) You have checked that there are no errors or warnings when the
-package is built using
-[`devtools::check()`](https://devtools.r-lib.org/reference/check.html).
+package is built using `devtools::check()`.
 
 ## Styleguides
 

@@ -3,7 +3,7 @@
 `lifecycle::badge("deprecated")`
 
 `DC_col_check()` was deprecated in favor of
-[`check_dc_cols()`](https://nationalparkservice.github.io/QCkit/reference/check_dc_cols.md)
+[`check_dc_cols()`](https://doi-nps.github.io/QCkit/reference/check_dc_cols.md)
 to enforce consistency in function naming throughout the package and to
 be consistent with tidyverse style guides.
 

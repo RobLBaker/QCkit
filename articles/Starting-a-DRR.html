@@ -44,7 +44,7 @@
 <li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json">
 </form></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://github.com/nationalparkservice/QCkit/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/doi-nps/QCkit/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul>
 </div>
 
@@ -61,7 +61,7 @@
       <h1>Starting a DRR</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/nationalparkservice/QCkit/blob/master/vignettes/articles/Starting-a-DRR.Rmd" class="external-link"><code>vignettes/articles/Starting-a-DRR.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/doi-nps/QCkit/blob/master/vignettes/articles/Starting-a-DRR.Rmd" class="external-link"><code>vignettes/articles/Starting-a-DRR.Rmd</code></a></small>
       <div class="d-none name"><code>Starting-a-DRR.Rmd</code></div>
     </div>
 
@@ -108,10 +108,10 @@ of NPS data packages.</p>
 <li><p><strong>To start your DRR you will need all of your data in flat
 .csv files</strong>. All quality assurance, quality control, and quality
 flagging should be completed. Ideally you have already created or are in
-the process of creating a data package (see the <a href="https://nationalparkservice.github.io/EMLeditor/articles/a02_EML_creation_script.html" class="external-link">documentation</a>
-associated with the R package <a href="https://nationalparkservice.github.io/EMLeditor/index.html" class="external-link">EMLeditor</a>
-for data package creation). All of the .csv files you want to describe
-in the DRR should be in a single folder with <strong>no additional .csv
+the process of creating a data package (see the <a href="https://doi-nps.github.io/EMLeditor/articles/a02_EML_creation_script.html" class="external-link">documentation</a>
+associated with the R package <a href="https://doi-nps.github.io/EMLeditor/index.html" class="external-link">EMLeditor</a> for
+data package creation). All of the .csv files you want to describe in
+the DRR should be in a single folder with <strong>no additional .csv
 files</strong> (other files such as .txt and .xml will be ignored). This
 folder can be the same folder you used/are using to create a data
 package.</p></li>
@@ -120,27 +120,27 @@ package.</p></li>
 have an R project (.Rproj) initiated from creating a data package, you
 can use that same R project.</p></li>
 <li><p><strong>Install, update (if necessary), and load the QCkit R
-package</strong>. QCkit can be installed either as a component of the <a href="https://nationalparkservice.github.io/NPSdataverse/" class="external-link">NPSdataverse</a>
-or on its own. The benefits of installing the entire NPSdataverse is
-that upon loading the NPSdataverse, you will automatically be informed
-if there are any updates to QCkit (or any of the constituent packages).
-The downside to installing and loading the NPSdataverse is that the
-first time you install it the process can be lengthy (there are many
+package</strong>. QCkit can be installed either as a component of the <a href="https://doi-nps.github.io/NPSdataverse/" class="external-link">NPSdataverse</a> or on
+its own. The benefits of installing the entire NPSdataverse is that upon
+loading the NPSdataverse, you will automatically be informed if there
+are any updates to QCkit (or any of the constituent packages). The
+downside to installing and loading the NPSdataverse is that the first
+time you install it the process can be lengthy (there are many
 dependencies) and you may hit the GitHub.com API rate limit. Either
 installation is from GitHub.com and requires the devtools package to
 install.</p></li>
 </ol>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Install the devtools package, if you don't already have it:</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"devtools"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># Install the remotes package, if you don't already have it:</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"remotes"</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Install and load QCkit via NPSdataverse:</span></span>
-<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"nationalparkservice/NPSdataverse"</span><span class="op">)</span></span>
+<span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"doi-nps/NPSdataverse"</span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">NPSdataverse</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Alternatively, install and load just QCkit:</span></span>
-<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"nationalparkservice/QCkit"</span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/nationalparkservice/QCkit/" class="external-link">QCkit</a></span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"doi-nps/QCkit"</span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/doi-nps/QCkit/" class="external-link">QCkit</a></span><span class="op">)</span></span></code></pre></div>
 <ol start="4" style="list-style-type: decimal">
 <li>
 <strong>Open a new DRR Template</strong>. From within Rstudio,
@@ -184,7 +184,7 @@ paths before knitting.</p>
 
 
     <footer><div class="pkgdown-footer-left">
-  <p>Developed by Robert Baker, Judd Patterson, Joe DeVivo, Issac Quevedo, Sarah Wright.</p>
+  <p>Developed by Robert Baker, Judd Patterson, Issac Quevedo, Sarah Wright.</p>
 </div>
 
 <div class="pkgdown-footer-right">

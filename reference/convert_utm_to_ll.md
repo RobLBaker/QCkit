@@ -1,9 +1,9 @@
 # Coordinate Conversion from UTM to Latitude and Longitude
 
 **\[superseded\]** `convert_utm_to_ll()` was superseded in favor of
-[`generate_ll_from_utm()`](https://nationalparkservice.github.io/QCkit/reference/generate_ll_from_utm.md)
+[`generate_ll_from_utm()`](https://doi-nps.github.io/QCkit/reference/generate_ll_from_utm.md)
 to support and encourage including zone and datum columns in datasets.
-[`generate_ll_from_utm()`](https://nationalparkservice.github.io/QCkit/reference/generate_ll_from_utm.md)
+[`generate_ll_from_utm()`](https://doi-nps.github.io/QCkit/reference/generate_ll_from_utm.md)
 also adds the ability to specify the coordinate reference system for
 lat/long coordinates, and accepts column names either quoted or unquoted
 for better compatibility with tidyverse piping. `convert_utm_to_ll()`

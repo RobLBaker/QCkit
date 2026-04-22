@@ -1,7 +1,7 @@
 # Coordinate Conversion from UTM to Latitude and Longitude
 
 **\[deprecated\]** `utm_to_ll()` was deprecated in favor of
-[`convert_utm_to_ll()`](https://nationalparkservice.github.io/QCkit/reference/convert_utm_to_ll.md)
+[`convert_utm_to_ll()`](https://doi-nps.github.io/QCkit/reference/convert_utm_to_ll.md)
 to enforce a consistent naming scheme for functions across the package
 and to conform with the tidyverse style guide.
 

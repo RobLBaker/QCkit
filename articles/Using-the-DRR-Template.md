@@ -28,8 +28,7 @@ for subsequent analysis and reporting by NPS or third parties.
 ## Project Set-up
 
 To set up a project, follow the instructions in the Article, [“Starting
-a
-DRR”](https://nationalparkservice.github.io/QCkit/articles/Starting-a-DRR.md).
+a DRR”](https://doi-nps.github.io/QCkit/articles/Starting-a-DRR.md).
 
 ## Reproducible Reports
 

@@ -3,7 +3,7 @@
 **\[deprecated\]**
 
 This function has been deprecated in favor of
-[`check_te()`](https://nationalparkservice.github.io/QCkit/reference/check_te.md).
+[`check_te()`](https://doi-nps.github.io/QCkit/reference/check_te.md).
 The function name was changed to promote constancy in function naming
 across the package and to conform with tidyverse style guides.
 `te_check()` is no longer updated and may not reference the latest

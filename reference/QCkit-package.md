@@ -10,11 +10,11 @@ of NPS data but may have utility beyond their intended functions.
 
 Useful links:
 
-- <https://github.com/nationalparkservice/QCkit/>
+- <https://github.com/doi-nps/QCkit/>
 
-- <https://nationalparkservice.github.io/QCkit/>
+- <https://doi-nps.github.io/QCkit/>
 
-- Report bugs at <https://nationalparkservice.github.io/QCkit/>
+- Report bugs at <https://doi-nps.github.io/QCkit/>
 
 ## Author
 
@@ -25,8 +25,6 @@ Authors:
 
 - Judd Patterson <judd_patterson@nps.gov>
   ([ORCID](https://orcid.org/0000-0002-0951-7917))
-
-- Joe DeVivo
 
 - Issac Quevedo ([ORCID](https://orcid.org/0000-0003-0129-981X))
 

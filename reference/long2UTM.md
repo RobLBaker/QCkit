@@ -1,7 +1,7 @@
 # Return UTM Zone
 
 **\[deprecated\]** `long2UTM` was deprecated in favor of
-[`convert_long_to_utm()`](https://nationalparkservice.github.io/QCkit/reference/convert_long_to_utm.md)
+[`convert_long_to_utm()`](https://doi-nps.github.io/QCkit/reference/convert_long_to_utm.md)
 to enforce a consistent function naming pattern across the package and
 to conform to the tidyverse style guide.
 

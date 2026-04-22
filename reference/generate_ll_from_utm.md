@@ -6,7 +6,7 @@ columns with the converted decimalLatitude and decimalLongitude
 coordinates using the reference coordinate system NAD83. Your data must
 also contain columns specifying the zone and datum of your UTM
 coordinates. In contrast to
-[`convert_utm_to_ll()`](https://nationalparkservice.github.io/QCkit/reference/convert_utm_to_ll.md)
+[`convert_utm_to_ll()`](https://doi-nps.github.io/QCkit/reference/convert_utm_to_ll.md)
 (superseded), `generate_ll_from_utm()` requires zone and datum columns.
 It supports quoted or unquoted column names and a user-specified datum
 for lat/long coordinates. It also adds an extra column to the output
